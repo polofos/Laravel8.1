@@ -21,10 +21,22 @@
         <script type="importmap">
         {
             "imports": {
-            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
             }
         }
-        </script>       
+        </script>    
+        <script type="module">
+            import {createApp} from 'vue'
+
+            createApp({
+                data() {
+                    return {
+                        message: 'Hello Petronilo!'
+                    }
+                }
+            }).mount('#app')
+        </script>
+        
 
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))
@@ -140,16 +152,5 @@
                 </div>
             </div>
         </div>
-        <script type="module">
-            import { createApp } from 'vue'
-
-            createApp({
-                data() {
-                return {
-                    message: 'Hello Petronilo!'
-                }
-                }
-            }).mount('#app')
-        </script>
     </body>
 </html>
